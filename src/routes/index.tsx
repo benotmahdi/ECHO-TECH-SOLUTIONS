@@ -151,7 +151,7 @@ function SiteContent() {
             </Reveal>
 
             <Reveal delay={120}>
-              <div className="relative h-[340px] w-full sm:h-[440px]">
+              <div className="relative h-[420px] w-full sm:h-[560px]">
                 <ClientOnly fallback={<div className="h-full w-full rounded-3xl border border-border bg-card/40" />}>
                   <Suspense fallback={<div className="h-full w-full rounded-3xl border border-border bg-card/40" />}>
                     <HeroScene />
