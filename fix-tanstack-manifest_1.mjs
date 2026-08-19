@@ -64,7 +64,6 @@ let fixedCount = 0;
 // unhashed file plus one or more correct hashed files.
 const byDir = new Map();
 for (const file of manifestFiles) {
-  const dir = file.slice(0, file.length - BROKEN_NAME.length - 1);
   const dirKey = file.replace(/\/[^/]+$/, "");
   if (!byDir.has(dirKey)) byDir.set(dirKey, []);
   byDir.get(dirKey).push(file);
