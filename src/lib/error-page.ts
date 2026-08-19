@@ -1,30 +1,80 @@
+/**
+ * Render a simple HTML error page for SSR failures.
+ * This is displayed when the server encounters an uncaught error.
+ */
 export function renderErrorPage(): string {
-  return `<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>This page didn't load</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      body { font: 15px/1.5 system-ui, -apple-system, sans-serif; background: #fafafa; color: #111; display: grid; place-items: center; min-height: 100vh; margin: 0; padding: 1.5rem; }
-      .card { max-width: 28rem; width: 100%; text-align: center; padding: 2rem; }
-      h1 { font-size: 1.25rem; margin: 0 0 0.5rem; }
-      p { color: #4b5563; margin: 0 0 1.5rem; }
-      .actions { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
-      a, button { padding: 0.5rem 1rem; border-radius: 0.375rem; font: inherit; cursor: pointer; text-decoration: none; border: 1px solid transparent; }
-      .primary { background: #111; color: #fff; }
-      .secondary { background: #fff; color: #111; border-color: #d1d5db; }
-    </style>
-  </head>
-  <body>
-    <div class="card">
-      <h1>This page didn't load</h1>
-      <p>Something went wrong on our end. You can try refreshing or head back home.</p>
-      <div class="actions">
-        <button class="primary" onclick="location.reload()">Try again</button>
-        <a class="secondary" href="/">Go home</a>
+  return `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Error</title>
+      <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+          background-color: #0a0a0a;
+          color: #e5e5e5;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 100vh;
+          padding: 20px;
+        }
+        .container {
+          max-width: 600px;
+          text-align: center;
+        }
+        h1 {
+          font-size: 4rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+          background: linear-gradient(135deg, #d4af37 0%, #e8c547 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+        h2 {
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: #e5e5e5;
+        }
+        p {
+          font-size: 1rem;
+          color: #a0a0a0;
+          margin-bottom: 2rem;
+          line-height: 1.6;
+        }
+        a {
+          display: inline-block;
+          background: linear-gradient(135deg, #d4af37 0%, #e8c547 100%);
+          color: #1a1a1a;
+          padding: 0.75rem 1.5rem;
+          border-radius: 0.5rem;
+          text-decoration: none;
+          font-weight: 600;
+          transition: transform 0.2s, filter 0.2s;
+        }
+        a:hover {
+          transform: translateY(-2px);
+          filter: brightness(1.1);
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>500</h1>
+        <h2>Something went wrong</h2>
+        <p>We encountered an error processing your request. Please try again later or return to the home page.</p>
+        <a href="/">Return Home</a>
       </div>
-    </div>
-  </body>
-</html>`;
+    </body>
+    </html>
+  `;
 }
