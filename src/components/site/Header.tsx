@@ -33,7 +33,7 @@ export function Header() {
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 sm:px-8">
         <a href="#home" className="flex items-center" aria-label="ECHO">
-          <Logo className="h-10 sm:h-12" />
+          <Logo className="h-14 sm:h-16" />
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex">
