@@ -245,14 +245,13 @@
 }
 
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .reveal[data-visible="true"] {
-  opacity: 1;
-  transform: none;
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 @keyframes float-blob-1 {
